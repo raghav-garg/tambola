@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<style>
@@ -21,6 +22,7 @@
 $( document ).ready(function() {
 
 	var person = prompt("Please enter your name", "Harry Potter");
+	$("#nameText").text("Hi "+person+", Here is your tambola ticket");
 	var param = {lastName: "Doe", firstName: "John"};
 	$.post('https://online-tambola-4dfa8.firebaseio.com/',
   JSON.stringify(param),
@@ -28,6 +30,14 @@ $( document ).ready(function() {
     alert("success");
   }
 );
+
+
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
+
+$('#ip').text("Ticket created on "+dateTime);
 
 var array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90];
  var i = array.length,
@@ -107,6 +117,12 @@ $(".number").click(function() {
     $(this).addClass('strike');
 });
 
+$(".number").dblclick(function() {
+    //$(".number").css("background-color", "red");
+    //$(this).css("background-color", "666600");
+    $(this).removeClass('strike');
+});
+
 $(".number").hover(function() {
     //$(".number").css("background-color", "red");
     $(this).addClass('mousehover')
@@ -122,7 +138,7 @@ $(".number").hover(function() {
 </script>
 </head>
 <body>
-<table border="2" style="width: 100%; border-collapse: collapse; border-color: #000000; border-style: solid; margin-left: auto; margin-right: auto;" cellspacing="1" height="176"><caption>Tambola ticket</caption>
+<table border="2" style="width: 100%; border-collapse: collapse; border-color: #000000; border-style: solid; margin-left: auto; margin-right: auto;" cellspacing="1" height="176"><caption id="nameText"></caption>
 <tbody>
 <tr>
 <td style="width: 11.1111%;" id = "1a"><p id="f1"></p></td>
@@ -159,5 +175,10 @@ $(".number").hover(function() {
 </tr>
 </tbody>
 </table>
+<br><br>
+<H2>Rules:<H2>
+	<p>1. Click on a number to mark it crossed.</p>
+	<p>2. If you marked it wrongly, reset it by double clicking on number</p>
+<footer id = "ip"></footer>
 </body>
 </html>
