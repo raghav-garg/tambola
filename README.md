@@ -9,3 +9,6 @@ This online Tambola has two parts
   https://raghav-garg.github.io/tambola/number%20generator/
   
   
+TODO:
+1. Create gameroom, with unique id
+2. Integrate firebase for number loggin and notifications
