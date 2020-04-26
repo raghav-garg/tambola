@@ -24,7 +24,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 $( document ).ready(function() {
-
+$.get("https://us-central1-online-tambola-4dfa8.cloudfunctions.net/helloWorld", function(data){
+            // Display the returned data in browser
+            console.log(data);
+        });
 	
 // 	var param = {lastName: "Doe", firstName: "John"};
 // 	$.post('https://online-tambola-4dfa8.firebaseio.com/',
