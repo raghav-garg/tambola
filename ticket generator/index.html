@@ -31,12 +31,38 @@ $.get("https://us-central1-online-tambola-4dfa8.cloudfunctions.net/helloWorld", 
 
             for(var i = 0; i<9 ; i++)
             {
-              for(var j=0; j<2 ; j++)
+              for(var j=0; j<3 ; j++)
               {
                   $('#'+j+i).addClass('number');
                   $('#'+j+i).html(array[i][j]);
               }
             } 
+
+$(".number").click(function() {
+    //$(".number").css("background-color", "red");
+    //$(this).css("background-color", "666600");
+    $(this).addClass('strike');
+});
+
+$(".number").dblclick(function() {
+    //$(".number").css("background-color", "red");
+    //$(this).css("background-color", "666600");
+    $(this).removeClass('strike');
+});
+
+$(".number").hover(function() {
+    //$(".number").css("background-color", "red");
+    $(this).addClass('mousehover')
+    //$(this).addClass('strike');
+},function() {
+    //$(".number").css("background-color", "red");
+    $(this).removeClass('mousehover');
+    //$(this).addClass('strike');
+} );
+
+    });
+
+
         });
 	
 
@@ -65,29 +91,6 @@ var person = prompt("Please enter your name", "Harry Potter");
 $("#nameText").text("Hi "+person+", Here is your tambola ticket");
 
 }
-$(".number").click(function() {
-    //$(".number").css("background-color", "red");
-    //$(this).css("background-color", "666600");
-    $(this).addClass('strike');
-});
-
-$(".number").dblclick(function() {
-    //$(".number").css("background-color", "red");
-    //$(this).css("background-color", "666600");
-    $(this).removeClass('strike');
-});
-
-$(".number").hover(function() {
-    //$(".number").css("background-color", "red");
-    $(this).addClass('mousehover')
-    //$(this).addClass('strike');
-},function() {
-    //$(".number").css("background-color", "red");
-    $(this).removeClass('mousehover');
-    //$(this).addClass('strike');
-} );
-
-    });
 
 </script>
 </head>
