@@ -27,7 +27,16 @@ $( document ).ready(function() {
   var array ;
 $.get("https://us-central1-online-tambola-4dfa8.cloudfunctions.net/helloWorld", function(data){
             // Display the returned data in browser
-            array = data;
+            array = eval(data);
+
+            for(var i = 0; i<9 ; i++)
+            {
+              for(var j=0; j<2 ; j++)
+              {
+                  $('#'+j+i).addClass('number');
+                  $('#'+j+i).html(array[i][j]);
+              }
+            } 
         });
 	
 
