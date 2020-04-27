@@ -37,8 +37,11 @@ $.get("https://us-central1-online-tambola-4dfa8.cloudfunctions.net/helloWorld", 
             {
               for(var j=0; j<3 ; j++)
               {
-                  $('#'+j+i).addClass('number');
                   $('#'+j+i).html(array[i][j]);
+                  if(array[i][j] !=null)
+                  {
+                    $('#'+j+i).addClass('number');  
+                  }
               }
             } 
 
@@ -77,19 +80,6 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 var dateTime = date+' '+time;
 
 $('#ip').text("Ticket created on "+dateTime);
-
-
-for(var i = 0; i<9 ; i++)
-{
-  for(var j=0; j<2 ; j++)
-  {
-    $('#'+j+i).html(array[i][j]);
-    if(array[i][j] !=null){
-      $('#'+j+i).addClass('number');  
-    }
-    
-  }
-}
 
 
 var person = prompt("Please enter your name", "Harry Potter");
