@@ -1,5 +1,10 @@
 # tambola
 
+Final and advanced version of this has been hosted on firebase:
+
+https://online-tambola-4dfa8.web.app
+
+
 This online Tambola has two parts
 
 1. Online Ticket Generator
